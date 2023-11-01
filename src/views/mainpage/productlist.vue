@@ -1,6 +1,6 @@
 <!-- 产品列表 -->
 <template>
-    <header class="productlist-header" style="padding: 0% 6% 0% 6%; margin-top:30px">
+    <header class="productlist-header">
         <!-- <ul>
             <li v-for="product in products" :key="product.id">
                 <router-link :to="'/product/' + product.id">{{ product.name }}</router-link>
@@ -43,7 +43,7 @@
 
     </header>
 
-    <main class="productlist-main" style="margin-top:30px">
+    <main class="productlist-main" style="padding-top:80px">
         <div class="list-header" style="padding: 0% 6% 0% 6%; ">
             <span>游戏列表</span>
             <span>查看全部
@@ -61,7 +61,7 @@
                 <RightOutlined />
             </span>
         </div>
-        <div class="list-content-waterfull" style="padding: 0% 6% 0% 6%; ">
+        <div class="list-content-waterfull" style="padding: 0% 6% 60px 6%; ">
             <div style="margin: 0 -12px;">
                 <WaterfullCard1 :listInfo="waterfull1Data" />
             </div>
@@ -99,31 +99,38 @@ export default {
             topic: "玩具工厂",
             text: "亲手制作属于你的玩具"
         }];
-        const waterfull1Data =[
-                {
-                    src: 'https://picsum.photos/200/300?random=1',
-                    like: 30,
-                    title: '趣味拼',
-                    author: '小虾',
-                    authorAvater: 'https://picsum.photos/200/300?random=1'
-                },
-                {
-                    src: 'https://picsum.photos/200/300?random=2',
-                    like: 20,
-                    title: '趣味拼',
-                    author: '小华',
-                    authorAvater: 'https://picsum.photos/200/300?random=2'},
-                 {
-                    src: 'https://picsum.photos/200/300?random=3',
-                    like: 20,
-                    title: '趣味拼',
-                    author: '小绿',
-                    authorAvater: 'https://picsum.photos/200/300?random=3'
-                 }   
-
-            ]
+        const waterfull1Data = [
+            {
+                src: 'https://picsum.photos/200/300?random=1',
+                like: 30,
+                title: '趣味拼',
+                author: '小虾',
+                authorAvater: 'https://picsum.photos/200/300?random=1'
+            },
+            {
+                src: 'https://picsum.photos/200/300?random=2',
+                like: 20,
+                title: '趣味拼',
+                author: '小华',
+                authorAvater: 'https://picsum.photos/200/300?random=2'
+            },
+            {
+                src: 'https://picsum.photos/200/300?random=3',
+                like: 20,
+                title: '趣味拼',
+                author: '小绿',
+                authorAvater: 'https://picsum.photos/200/300?random=3'
+            },
+            {
+                src: 'https://picsum.photos/200/300?random=4',
+                like: 20,
+                title: '趣味拼',
+                author: '小红',
+                authorAvater: 'https://picsum.photos/200/300?random=4'
+            }
+        ];
         return {
-            card1Data,waterfull1Data
+            card1Data, waterfull1Data
         };
     }
 };
@@ -132,6 +139,16 @@ export default {
 
 
 <style scoped>
+.productlist-header {
+    padding: 20px 6% 20px 6%;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 100;
+}
+
 .list-header {
     display: flex;
     justify-content: space-between;
@@ -159,7 +176,6 @@ export default {
 
 .list-content-waterfull {
     margin-top: 14px;
-
 
 }
 

@@ -31,8 +31,9 @@ import { ref, watch } from 'vue';
 
 export default {
     setup() {
-        const activeKey = ref('index');
         const router = useRouter();
+        // 确保底部导航栏默认为当前激活的标签页
+        const activeKey = ref(router.currentRoute.value.path.split('/')[2]);
         watch(activeKey, (newValue) => {
             router.push('/main/' + newValue);
 
