@@ -1,10 +1,8 @@
 <!-- main的入口 -->
 <template>
     <div>
-        <header>
-            <h1>My App</h1>
-        </header>
-        <main>
+
+        <main class="container">
             <!-- Your main content here -->
             <RouterView />
         </main>
@@ -17,7 +15,11 @@
                     <li><router-link to="/main/personal">个人中心</router-link></li>
                 </ul>
             </nav> -->
-            <a-menu v-model:selectedKeys="current" mode="horizontal" :items="items" click="handleClick()"/>
+            <a-tabs class="buttom-nav" v-model:activeKey="activeKey" size="large" :tabBarGutter="tabBarGutter" centered>
+                <a-tab-pane key="index" tab="首页"></a-tab-pane>
+                <a-tab-pane key="productlist" tab="分类"></a-tab-pane>
+                <a-tab-pane key="cart" tab="购物车"></a-tab-pane>
+            </a-tabs>
         </footer>
 
     </div>
@@ -25,46 +27,43 @@
 
 <script>
 import { useRouter, RouterView } from 'vue-router';
-import { ref,watch } from 'vue';
+import { ref, watch } from 'vue';
 
 export default {
     setup() {
-        const current = ref(['index']);
+        const activeKey = ref('index');
         const router = useRouter();
-        const items = ref([
-            {
-                key: 'index',
-                label: '首页',
-                title: '首页'
-            },
-            {
-                key: 'productlist',
-                label: '产品列表',
-                title: '产品列表'
-            },
-            {
-                key: 'cart',
-                label: '购物车',
-                title: '购物车'
-            },
-            {
-                key: 'personal',
-                label: '个人中心',
-                title: '个人中心'
-            }
-        ]);
-        watch(current, (newValue) => {
+        watch(activeKey, (newValue) => {
             router.push('/main/' + newValue);
-            
+
         });
-        return {
-            current,
-            items
-        };
+        // 标签间隙
+        const tabBarGutter = ref(60)
+        return{
+            activeKey,tabBarGutter
+        }
     }
 };
 </script>
 
 <style>
 /* Your component styles here */
+.buttom-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #e8e8e8;
+    z-index: 100;
+}
+
+.container {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(247, 248, 250, 1);
+    position: fixed;
+    top: 0;
+    
+    }
 </style>
+<!-- rgba(255, 165, 0, 1) -->
