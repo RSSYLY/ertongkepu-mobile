@@ -62,7 +62,10 @@
             </span>
         </div>
         <div class="list-content-waterfull" style="padding: 0% 6% 0% 6%; ">
-            <WaterfullCard1 :items="array" />
+            <div style="margin: 0 -12px;">
+                <WaterfullCard1 :listInfo="waterfull1Data" />
+            </div>
+
         </div>
     </main>
 </template>
@@ -96,45 +99,31 @@ export default {
             topic: "玩具工厂",
             text: "亲手制作属于你的玩具"
         }];
-        return {
-            card1Data
-        };
-    },
-    data() {
-        return {
-            array: [
+        const waterfull1Data =[
                 {
-                    picUrl: imgUrl1,
+                    src: 'https://picsum.photos/200/300?random=1',
                     like: 30,
-                    title: '趣味拼图',
-                    author: '小明',
-                    authorAvater: avaUrl1
+                    title: '趣味拼',
+                    author: '小虾',
+                    authorAvater: 'https://picsum.photos/200/300?random=1'
                 },
                 {
-                    picUrl: imgUrl2,
+                    src: 'https://picsum.photos/200/300?random=2',
                     like: 20,
-                    title: '趣味拼图',
-                    author: '小红',
-                    authorAvater: avaUrl2
-                },
-                {
-                    picUrl: imgUrl2,
+                    title: '趣味拼',
+                    author: '小华',
+                    authorAvater: 'https://picsum.photos/200/300?random=2'},
+                 {
+                    src: 'https://picsum.photos/200/300?random=3',
                     like: 20,
-                    title: '趣味拼图',
-                    author: '小红',
-                    authorAvater: avaUrl2
-                }
-,                {
-                    picUrl: imgUrl2,
-                    like: 20,
-                    title: '趣味拼图',
-                    author: '小红',
-                    authorAvater: avaUrl2
-                }
-
-
+                    title: '趣味拼',
+                    author: '小绿',
+                    authorAvater: 'https://picsum.photos/200/300?random=3'
+                 }   
 
             ]
+        return {
+            card1Data,waterfull1Data
         };
     }
 };
