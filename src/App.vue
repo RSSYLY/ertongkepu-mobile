@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router';
 <template>
   <a-config-provider :theme="{
     token: {
-      colorPrimary: '#ffa500', colorWarning: '#a717ff' } }">
+      colorPrimary: '#ffa500', colorWarning: '#a717ff',colorInfo: '#000' } }">
     <div style="font-family: MiSans-Regular;">
       <RouterView />
     </div>

@@ -1,15 +1,15 @@
 <!-- 产品列表 -->
 <template>
-    <header class="productlist-header" style="padding: 6% 6%;">
+    <header class="productlist-header" style="padding: 0% 6% 0% 6%; margin-top:30px">
         <!-- <ul>
             <li v-for="product in products" :key="product.id">
                 <router-link :to="'/product/' + product.id">{{ product.name }}</router-link>
             </li>
         </ul> -->
-        <a-row :gutter="16" align="middle">
-            <a-col :xs="6" :sm="4" :md="3" >
+        <a-row :gutter="16" justify="center" align="middle">
+            <a-col :xs="6" :sm="4" :md="3">
                 <a-dropdown>
-                    <a class="ant-dropdown-link" @click.prevent>
+                    <a class="ant-dropdown-link" @click.prevent style="text-align: center;">
                         分类
                         <DownOutlined />
                     </a>
@@ -31,7 +31,7 @@
                     </template>
                 </a-dropdown>
             </a-col>
-            <a-col :xs="18" :sm="20" :md="21" >
+            <a-col :xs="18" :sm="20" :md="21">
                 <a-input placeholder="输入搜索内容" type="text">
                     <template #prefix>
                         <SearchOutlined />
@@ -42,20 +42,141 @@
 
 
     </header>
+
+    <main class="productlist-main" style="margin-top:30px">
+        <div class="list-header" style="padding: 0% 6% 0% 6%; ">
+            <span>游戏列表</span>
+            <span>查看全部
+                <RightOutlined />
+            </span>
+        </div>
+        <!-- 循环渲染card1Data -->
+        <div class="list-content-line" style="padding: 0% 0% 0% 6%; ">
+            <FixCard1 v-for="item in card1Data" :key="item.id" :avaPath="item.avaPath" :picPath="item.picPath"
+                :userName="item.userName" :topic="item.topic" :text="item.text" />
+        </div>
+        <div class="list-header" style="margin-top:26px;padding: 0% 6% 0% 6%; ">
+            <span>更多游戏推荐</span>
+            <span>查看全部
+                <RightOutlined />
+            </span>
+        </div>
+        <div class="list-content-waterfull" style="padding: 0% 6% 0% 6%; ">
+            <WaterfullCard1 :items="array" />
+        </div>
+    </main>
 </template>
 
 <script>
-import { DownOutlined, SearchOutlined } from '@ant-design/icons-vue';
+// 图片资源
+import imgUrl1 from '@/assets/img/sea.png';
+import avaUrl1 from '@/assets/icon/avater/1.png';
+import imgUrl2 from '@/assets/img/cars.png';
+import avaUrl2 from '@/assets/icon/avater/2.png';
+// 其他
+import { DownOutlined, SearchOutlined, RightOutlined } from '@ant-design/icons-vue';
+import FixCard1 from '@/components/fixcard1.vue';
+import WaterfullCard1 from '@/components/waterfullcard1.vue';
 export default {
-    data() {
+    components: {
+        DownOutlined, SearchOutlined, RightOutlined, FixCard1, WaterfullCard1
+    },
+    setup() {
+        const card1Data = [{
+            avaPath: avaUrl1,
+            picPath: imgUrl1,
+            userName: "小明",
+            topic: "野外冒险",
+            text: "在野外的森林冒险"
+        },
+        {
+            avaPath: avaUrl2,
+            picPath: imgUrl2,
+            userName: "小红",
+            topic: "玩具工厂",
+            text: "亲手制作属于你的玩具"
+        }];
         return {
-            products: [
-                { id: 1, name: 'Product 1' }
-            ]
+            card1Data
         };
     },
-    components: {
-        DownOutlined, SearchOutlined
+    data() {
+        return {
+            array: [
+                {
+                    picUrl: imgUrl1,
+                    like: 30,
+                    title: '趣味拼图',
+                    author: '小明',
+                    authorAvater: avaUrl1
+                },
+                {
+                    picUrl: imgUrl2,
+                    like: 20,
+                    title: '趣味拼图',
+                    author: '小红',
+                    authorAvater: avaUrl2
+                },
+                {
+                    picUrl: imgUrl2,
+                    like: 20,
+                    title: '趣味拼图',
+                    author: '小红',
+                    authorAvater: avaUrl2
+                }
+,                {
+                    picUrl: imgUrl2,
+                    like: 20,
+                    title: '趣味拼图',
+                    author: '小红',
+                    authorAvater: avaUrl2
+                }
+
+
+
+            ]
+        };
     }
 };
 </script>
+
+
+
+<style scoped>
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-header span:first-child {
+    font-size: 16px;
+}
+
+.list-header span:last-child {
+    font-size: 14px;
+    color: #999;
+}
+
+.list-content-line {
+    margin-top: 14px;
+    /* display: flex; */
+    /* gap: 8px; */
+    overflow-x: auto;
+    /* 允许水平滚动 */
+    white-space: nowrap;
+    /* 防止子元素自动换行 */
+}
+
+.list-content-waterfull {
+    margin-top: 14px;
+
+
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+</style>

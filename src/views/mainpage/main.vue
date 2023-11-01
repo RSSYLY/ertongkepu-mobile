@@ -57,13 +57,12 @@ export default {
     z-index: 100;
 }
 
-.container {
+/* .container {
         width: 100%;
         height: 100%;
         background-color: rgba(247, 248, 250, 1);
     position: fixed;
     top: 0;
-    
-    }
+    } */
 </style>
 <!-- rgba(255, 165, 0, 1) -->

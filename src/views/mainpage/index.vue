@@ -1,6 +1,7 @@
 <!-- 首页 -->
 <template>
-    <a-row :gutter="[16, 24]" style="padding: 6% 6%;">
+    <div style="padding: 6% 6%;">
+    <a-row :gutter="[16, 24]" style="">
         <a-col class="gutter-row" :span="24">
             <a-card :tab-list="tabListNoTitle" :active-tab-key="noTitleKey" :bodyStyle="{ height: '98px' }"
                 @tabChange="key => onTabChange(key)">
@@ -24,11 +25,11 @@
                         <a-row>
                             <a-col :span="18">
                                 <div
-                                    style="font-size: 10pt;font-weight: 500;letter-spacing: 0pt;line-height: 18pt;color: rgba(29, 33, 41, 1);">
+                                    style="font-size: 10pt;font-weight: 500;letter-spacing: 0pt;line-height: 18pt;color: rgba(29, 33, 41, 1);overflow: hidden;">
                                     {{ item.title }}
                                 </div>
                                 <div
-                                    style="font-size: 8pt;font-weight: 400;letter-spacing: 0pt;line-height: 16pt;color: rgba(134, 144, 156, 1);">
+                                    style="font-size: 8pt;font-weight: 400;letter-spacing: 0pt;line-height: 16pt;color: rgba(134, 144, 156, 1);overflow: hidden;white-space: nowrap; text-overflow: ellipsis;overflow: hidden;">
                                     {{ item.content }}
                                 </div>
                             </a-col>
@@ -44,6 +45,7 @@
             </a-row>
         </a-col>
     </a-row>
+    </div>
 </template>
 <script>
 import { ref } from 'vue';
@@ -73,7 +75,7 @@ export default {
         const indexInfo = [
             {
                 title: '拼图游戏',
-                content: '拼出你喜欢的图案',
+                content: '拼出你喜欢',
                 logo: imgUrl1,
                 logoColor: 'rgba(3, 133, 255, 1)',
             },
