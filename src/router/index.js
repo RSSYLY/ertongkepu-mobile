@@ -37,7 +37,7 @@ const router = createRouter({
 
 // 让所有访问路径不是上述的路径都跳转到 /main/index
 router.beforeEach((to, from, next) => {
-  if (to.path === '/' || to.path === '/main' || to.path === '/main/') {
+  if (to.path === '/' || to.path === '/main' || to.path === '/main/'|| to.path === '/product') {
     next('/main/index')
   } else {
     next()

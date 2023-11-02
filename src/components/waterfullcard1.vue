@@ -6,7 +6,7 @@
         450: { rowPerView: 2 }
     }">
         <template #item="{ item, url, index }">
-            <div class="card" >
+            <div class="card" @click="this.$router.push('/product/'+this.listInfo[index].itemIndex)">
                 <div class="sb-card-like">
                     <HeartOutlined />
                     <span>{{ this.listInfo[index].like }}</span>

@@ -5,49 +5,52 @@ export default {
         HeartOutlined, CommentOutlined
     },
     props: {
-        avaPath: String,
-        picPath: String,
-        userName: String,
-        topic: String,
-        text: String
+        authorAvater: String,
+        src: String,
+        author: String,
+        title: String,
+        text: String,
+        itemIndex:Number
     }
 };
 </script>
 <!-- 这是模板 -->
-<template>
-    <div class="fixcard-1-div">
-    <div class="fixcard-1"  :style="{backgroundImage: 'url('+ picPath+')'}">
-        <div class="fixcard-1-content">
-            <div class="fixcard-1-content-header">
-                <a-space>
-                    <a-avatar :size="24" :src="avaPath">
-                    </a-avatar>
-                    <span class="fixcard-1-content-header-text">{{ userName }}</span>
-                </a-space>
-            </div>
-            <div class="fixcard-1-content-content">
-                <div class="fixcard-1-content-content-text">
-                    <span>{{ topic }}</span>
-                    <span>{{ text }}</span>
-                </div>
-                <div class="fixcard-1-content-content-action">
+<template>        
+    <div class="fixcard-1-div" @click="this.$router.push('/product/'+itemIndex);">
+        <div class="fixcard-1" :style="{ backgroundImage: 'url(' + src + ')' }">
+            <div class="fixcard-1-content">
+                <div class="fixcard-1-content-header">
                     <a-space>
-                        <HeartOutlined />
-                        <CommentOutlined />
+                        <a-avatar :size="24" :src="authorAvater">
+                        </a-avatar>
+                        <span class="fixcard-1-content-header-text">{{ author }}</span>
                     </a-space>
+                </div>
+                <div class="fixcard-1-content-content">
+                    <div class="fixcard-1-content-content-text">
+                        <span>{{ title }}</span>
+                        <span>{{ text +itemIndex }}</span>
+                    </div>
+                    <div class="fixcard-1-content-content-action">
+                        <a-space>
+                            <HeartOutlined />
+                            <CommentOutlined />
+                        </a-space>
+                    </div>
                 </div>
             </div>
         </div>
-    </div></div>
+    </div>
 </template>
 
 <style>
-.fixcard-1-div{
+.fixcard-1-div {
     display: inline-block;
     width: 200px;
     height: 240px;
     margin-right: 8px;
 }
+
 .fixcard-1 {
     position: relative;
     border-radius: 12px;
@@ -62,7 +65,7 @@ export default {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
+
 }
 
 /* .fixcard-1::before {

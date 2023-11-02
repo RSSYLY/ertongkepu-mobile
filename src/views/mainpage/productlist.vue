@@ -52,8 +52,8 @@
         </div>
         <!-- 循环渲染card1Data -->
         <div class="list-content-line" style="padding: 0% 0% 0% 6%; ">
-            <FixCard1 v-for="item in card1Data" :key="item.id" :avaPath="item.avaPath" :picPath="item.picPath"
-                :userName="item.userName" :topic="item.topic" :text="item.text" />
+            <FixCard1 v-for="item in card1Data" :key="item.id" :authorAvater="item.authorAvater" :src="item.src"
+                :author="item.author" :title="item.title" :text="item.text" :itemIndex="item.itemIndex" />
         </div>
         <div class="list-header" style="margin-top:26px;padding: 0% 6% 0% 6%; ">
             <span>更多游戏推荐</span>
@@ -85,49 +85,63 @@ export default {
         DownOutlined, SearchOutlined, RightOutlined, FixCard1, WaterfullCard1
     },
     setup() {
-        const card1Data = [{
-            avaPath: avaUrl1,
-            picPath: imgUrl1,
-            userName: "小明",
-            topic: "野外冒险",
-            text: "在野外的森林冒险"
-        },
-        {
-            avaPath: avaUrl2,
-            picPath: imgUrl2,
-            userName: "小红",
-            topic: "玩具工厂",
-            text: "亲手制作属于你的玩具"
-        }];
+        const card1Data = [
+            {
+                authorAvater: avaUrl1,
+                src: imgUrl1,
+                author: "小明",
+                title: "野外冒险",
+                text: "在野外的森林冒险",
+                like: 16,
+                itemIndex: 1
+            },
+            {
+                authorAvater: avaUrl2,
+                src: imgUrl2,
+                author: "小红",
+                title: "玩具工厂",
+                text: "亲手制作属于你的玩具",
+                like: 29,
+                itemIndex: 2
+            }];
         const waterfull1Data = [
             {
+                authorAvater: 'https://picsum.photos/200/300?random=1',
                 src: 'https://picsum.photos/200/300?random=1',
-                like: 30,
-                title: '趣味拼',
                 author: '小虾',
-                authorAvater: 'https://picsum.photos/200/300?random=1'
+                title: '趣味拼',
+                text: '拼出你的世界',
+                like: 30,
+                itemIndex: 3
             },
             {
+                authorAvater: 'https://picsum.photos/200/300?random=2',
                 src: 'https://picsum.photos/200/300?random=2',
-                like: 20,
-                title: '趣味拼',
-                author: '小华',
-                authorAvater: 'https://picsum.photos/200/300?random=2'
+                author: '小猫',
+                title: '猫咪乐园',
+                text: '和小猫一起玩耍',
+                like: 25,
+                itemIndex: 4
             },
             {
+                authorAvater: 'https://picsum.photos/200/300?random=3',
                 src: 'https://picsum.photos/200/300?random=3',
+                author: '小狗',
+                title: '狗狗乐园',
+                text: '和小狗一起玩耍',
                 like: 20,
-                title: '趣味拼',
-                author: '小绿',
-                authorAvater: 'https://picsum.photos/200/300?random=3'
+                itemIndex: 5
             },
             {
+                authorAvater: 'https://picsum.photos/200/300?random=4',
                 src: 'https://picsum.photos/200/300?random=4',
-                like: 20,
-                title: '趣味拼',
-                author: '小红',
-                authorAvater: 'https://picsum.photos/200/300?random=4'
+                author: '小鸟',
+                title: '飞翔天空',
+                text: '和小鸟一起飞翔',
+                like: 15,
+                itemIndex: 6
             }
+
         ];
         return {
             card1Data, waterfull1Data
