@@ -4,9 +4,9 @@
         1000: { rowPerView: 4 },
         750: { rowPerView: 3 },
         450: { rowPerView: 2 }
-    }">
+    }" backgroundColor="transparent">
         <template #item="{ item, url, index }">
-            <div class="card" @click="this.$router.push('/product/'+this.listInfo[index].itemIndex)">
+            <div class="card" @click="this.$router.push('/product/' + this.listInfo[index].itemIndex)">
                 <div class="sb-card-like">
                     <HeartOutlined />
                     <span>{{ this.listInfo[index].like }}</span>
@@ -38,8 +38,8 @@ export default {
         HeartOutlined
     },
     // [{src:'./pic.png',like:30,title:'趣味拼图',author:'小明',authorAvater:'./avater.png'}]
-    props:{
-        listInfo:Array
+    props: {
+        listInfo: Array
     }
 };
 </script>
@@ -58,6 +58,7 @@ export default {
     color: rgba(29, 33, 41, 1);
 
 }
+
 .sb-card-text span:last-child {
     font-size: 12px;
     font-weight: 400;
@@ -66,21 +67,22 @@ export default {
     color: rgba(134, 144, 156, 1);
     text-align: left;
 }
-.sb-card-like{
-    top:8px;
+
+.sb-card-like {
+    top: 8px;
     right: 8px;
     border-radius: 999px;
     backdrop-filter: blur(10px);
     padding: 8px;
     z-index: 2;
-    position:absolute;
+    position: absolute;
     background: rgba(0, 0, 0, 0.2);
     /* 字体 */
     font-size: 12px;
-font-weight: 400;
-letter-spacing: 0px;
-line-height: 16px;
-color: rgba(255, 255, 255, 1);
-text-align: center;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
 }
 </style>

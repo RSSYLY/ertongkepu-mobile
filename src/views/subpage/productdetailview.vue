@@ -15,23 +15,25 @@
                 <div class="detail-header-card-bar-targets">
                     <a-space :size="1">
                         <template #split>
-                            <a-divider type="vertical" />
+                            <a-divider type="vertical" style="background-color:  rgba(229, 230, 235, 1);;"/>
                         </template>
                         <span v-for="item in product.targets">
                             {{ item }}
                         </span>
                     </a-space>
+                    <span style="color: rgba(255, 165, 0, 1);">更多 <RightOutlined style="color: rgba(22, 93, 255, 0.8)"/></span>
                 </div>
                 <div class="detail-header-card-bar-others">
                     <a-space>
-                        <span>
-                            <HeartOutlined />{{ product.like }}
+                        <span style="color: rgba(255, 125, 0, 1); font-size: 14px;">
+                            <HeartOutlined  style="color: rgba(255, 125, 0, 1);"/>{{ product.like }}
                         </span>
                         <span>“{{ product.comment.mostUseful }}”</span>
                     </a-space>
+                    <span style="color: rgba(255, 165, 0, 1);">{{product.comment.commentList.length }}条评价 <RightOutlined style="color: rgba(22, 93, 255, 0.8)"/></span>
                 </div>
             </div>
-            <div class="detail-header-card-location">
+            <div class="detail-header-card-location" v-if="product.location.street">
                 <div class="detail-header-card-location-text">
                     <div>
                         {{ product.location.street }}
@@ -53,14 +55,30 @@
                 </div>
             </div>
         </div>
-        <div class="comment-header" style="margin-top:26px;padding: 0% 6% 0% 6%; ">
-            <span>更多游戏推荐</span>
+        <div class="item-header" style="margin-top:26px;padding: 0% 6% 0% 6%; ">
+            <span>评论</span>
             <span>查看全部
                 <RightOutlined />
             </span>
         </div>
-        <div class="comment-content">
-            
+
+        <div class="comment-list">
+            <div class="comment-list-item">
+                
+            </div>
+
+        </div>
+        <div class="item-header" style="margin-top:26px;padding: 0% 6% 0% 6%; ">
+            <span>更多精彩游戏</span>
+            <span>查看全部
+                <RightOutlined />
+            </span>
+        </div>
+        <div class="list-content-waterfull" style="padding: 0% 6% 60px 6%; ">
+            <div style="margin: 0 -12px;">
+                <WaterfullCard1 :listInfo="waterfull1Data" />
+            </div>
+
         </div>
         <div>
             <h2>{{ product.name }}</h2>
@@ -71,9 +89,11 @@
   
 <script>
 import { HeartOutlined, PhoneOutlined, EnvironmentOutlined, RightOutlined } from '@ant-design/icons-vue';
+import WaterfullCard1 from '@/components/waterfullcard1.vue';
 export default {
     computed: {
         product() {
+            // 从路由参数中获取商品 id
             const productId = parseInt(this.$route.params.id);
             // 根据 productId 获取商品详细信息，这里可以使用你的数据源或 API 调用
             const productList = [{
@@ -91,6 +111,7 @@ export default {
                             userAvater: 'https://picsum.photos/200/300?random=1',
                             comment: '这个游戏很好玩',
                             time: 1698908810,
+                            isUseing: true,
                             subComment: [
                                 {
                                     user: '小华',
@@ -111,6 +132,7 @@ export default {
                             userAvater: 'https://picsum.photos/200/300?random=1',
                             comment: '这个游戏很好玩',
                             time: 1698908810,
+                            isUseing: false,
                             subComment: [
                                 {
                                     user: '小华',
@@ -143,7 +165,51 @@ export default {
         },
     },
     components: {
-        HeartOutlined, PhoneOutlined, EnvironmentOutlined, RightOutlined
+        HeartOutlined, PhoneOutlined, EnvironmentOutlined, RightOutlined, WaterfullCard1
+    },
+    setup(){
+        const waterfull1Data =[
+            {
+                authorAvater: 'https://picsum.photos/200/300?random=1',
+                src: 'https://picsum.photos/200/300?random=1',
+                author: '小虾',
+                title: '趣味拼',
+                text: '拼出你的世界',
+                like: 30,
+                itemIndex: 3
+            },
+            {
+                authorAvater: 'https://picsum.photos/200/300?random=2',
+                src: 'https://picsum.photos/200/300?random=2',
+                author: '小猫',
+                title: '猫咪乐园',
+                text: '和小猫一起玩耍',
+                like: 25,
+                itemIndex: 4
+            },
+            {
+                authorAvater: 'https://picsum.photos/200/300?random=3',
+                src: 'https://picsum.photos/200/300?random=3',
+                author: '小狗',
+                title: '狗狗乐园',
+                text: '和小狗一起玩耍',
+                like: 20,
+                itemIndex: 5
+            },
+            {
+                authorAvater: 'https://picsum.photos/200/300?random=4',
+                src: 'https://picsum.photos/200/300?random=4',
+                author: '小鸟',
+                title: '飞翔天空',
+                text: '和小鸟一起飞翔',
+                like: 15,
+                itemIndex: 6
+            }
+
+        ]
+        return {
+            waterfull1Data
+        }
     }
 };
 </script>
@@ -151,7 +217,7 @@ export default {
 .detail-header-card {
     position: relative;
     z-index: 2;
-    margin: -20px 6% 0 6%;
+    margin: -40px 6% 0 6%;
     padding: 12px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 1);
@@ -187,7 +253,11 @@ export default {
     background: rgba(247, 248, 250, 1);
 }
 
-
+.detail-header-card-bar-targets{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
 .detail-header-card-bar-targets span {
     font-size: 12px;
     font-weight: 400;
@@ -199,6 +269,9 @@ export default {
 
 .detail-header-card-bar-others {
     margin-top: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 .detail-header-card-bar-others span {
@@ -268,17 +341,17 @@ export default {
     text-align: left;
 }
 
-.comment-header {
+.item-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.comment-header span:first-child {
+.item-header span:first-child {
     font-size: 16px;
 }
 
-.comment-header span:last-child {
+.item-header span:last-child {
     font-size: 14px;
     color: #999;
 }
