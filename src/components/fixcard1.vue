@@ -17,7 +17,7 @@ export default {
 <!-- 这是模板 -->
 <template>        
     <div class="fixcard-1-div" @click="this.$router.push('/product/'+itemIndex);">
-        <div class="fixcard-1" :style="{ backgroundImage: 'url(' + src + ')' }">
+        <div class="fixcard-1" :style="{ backgroundImage: 'url(' + src + ')', backgroundSize: 'cover', backgroundPosition: 'center' }">
             <div class="fixcard-1-content">
                 <div class="fixcard-1-content-header">
                     <a-space>

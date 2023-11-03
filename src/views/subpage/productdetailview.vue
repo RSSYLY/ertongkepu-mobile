@@ -86,10 +86,6 @@
             </div>
 
         </div>
-        <div>
-            <h2>{{ product.name }}</h2>
-            <p>商品描述：{{ product.description }}</p>
-        </div>
     </div>
 </template>
   
