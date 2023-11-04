@@ -295,7 +295,7 @@
 </style>
 
 <script>
-import WaterfullCard2 from '@/components/WaterfullCard2.vue';
+import WaterfullCard2 from '@/components/waterfullcard2.vue';
 import { SearchOutlined, DownOutlined, RightOutlined, PlusOutlined, MinusOutlined } from '@ant-design/icons-vue';
 export default {
     components: {
