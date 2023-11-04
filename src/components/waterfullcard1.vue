@@ -37,7 +37,6 @@ export default {
         Waterfall,
         HeartOutlined
     },
-    // [{src:'./pic.png',like:30,title:'趣味拼图',author:'小明',authorAvater:'./avater.png'}]
     props: {
         listInfo: Array
     }
