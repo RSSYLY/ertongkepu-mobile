@@ -66,13 +66,14 @@
                             <div class="cart-item-price">¥ {{ item.price }}</div>
                             <div class="cart-item-count">
                                 <a-space :size="20">
-                                <a-button type="primary" size="small">
-                                    <PlusOutlined />
-                                </a-button>
-                                <span>{{ item.count }}</span>
-                                <a-button type="default" size="small">
-                                    <MinusOutlined />
-                                </a-button>
+                                    <a-button type="default" size="small" @click="item.count--;"
+                                        :disabled="item.count == 0">
+                                        <MinusOutlined :style="{ color: '#ffb200' }" />
+                                    </a-button>
+                                    <span>{{ item.count }}</span>
+                                    <a-button type="primary" size="small" @click="item.count++;">
+                                        <PlusOutlined :style="{ color: 'rgba(0, 0, 0, 1)' }" />
+                                    </a-button>
                                 </a-space>
                             </div>
                         </div>
@@ -81,15 +82,30 @@
             </div>
             <div class="cart-purchase">
                 <div class="cart-purchase-left">
-                    <div class="cart-purchase-left-text">合计：<span></span></div>
-                    <div class="cart-purchase-left-discount">优惠：<span></span></div>
+                    <a-checkbox :style="{ borderRadius: '100px' }">全选</a-checkbox>
                 </div>
                 <div class="cart-purchase-right">
-                    <a-button type="primary" size="large">结算</a-button>
+                    <div class="cart-purchase-right-price">
+                        <div class="cart-purchase-right-text">合计：<span>¥ {{ totalPrice }}</span></div>
+                        <div class="cart-purchase-right-discount">优惠：<span>¥ {{ totalPrice }}</span></div>
+                    </div>
+                    <a-button type="primary" size="large" :style="{ borderRadius: '30px' }"><span
+                            class="cart-purchase-button-text">结算</span></a-button>
                 </div>
             </div>
         </div>
+        <div class="list-header" style="margin-top:28px">
+            <span>更多精彩</span>
+            <span>查看全部
+                <RightOutlined />
+            </span>
+        </div>
+        <div class="list-content-waterfull" style="padding: 0% 0 60px 0; ">
+            <div style="margin: 0 -12px;">
+                <WaterfullCard2 :listInfo="waterfull1Data" />
+            </div>
 
+        </div>
     </main>
 </template>
 <style>
@@ -99,7 +115,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: #f7f8fa;
     z-index: 100;
 }
 
@@ -186,6 +202,7 @@
     /* 分列到两端 */
     justify-content: space-between;
     align-items: center;
+
 }
 
 .cart-item-price {
@@ -198,38 +215,168 @@
 }
 
 .cart-item-count {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 18px;
+    color: rgba(29, 33, 41, 1);
+    text-align: center;
+    vertical-align: top;
+}
 
+.cart-purchase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 1);
+}
+
+.cart-purchase-left {
+    display: flex;
+}
+
+.cart-purchase-right {
+    display: flex;
+    /* 分居两边 */
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.cart-purchase-right-text {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 16px;
+    color: rgba(29, 33, 41, 1);
+    text-align: left;
+}
+
+.cart-purchase-right-text span {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 22px;
+    color: rgba(255, 165, 0, 1);
+    text-align: left;
+
+}
+
+.cart-purchase-right-discount {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 14px;
+    color: rgba(134, 144, 156, 1);
+    text-align: left;
+}
+
+.cart-purchase-right-discount span {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 14px;
+    color: rgba(134, 144, 156, 1);
+    text-align: left;
+
+}
+
+.cart-purchase-button-text {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 1);
+    text-align: left;
 }
 </style>
 
 <script>
+import WaterfullCard2 from '@/components/WaterfullCard2.vue';
 import { SearchOutlined, DownOutlined, RightOutlined, PlusOutlined, MinusOutlined } from '@ant-design/icons-vue';
 export default {
     components: {
-        SearchOutlined, DownOutlined, RightOutlined, PlusOutlined, MinusOutlined
+        SearchOutlined, DownOutlined, RightOutlined, PlusOutlined, MinusOutlined, WaterfullCard2
     },
     setup() {
-        const cartInfo = [
+        const waterfull1Data = [
             {
-                id: 1,
-                title: '商品标题1',
-                text: '描述1',
-                price: 10.99,
-                count: 2,
-                src: 'https://img.jsdesign2.com/assets/img/653c609174a2094d23b5807a.png#b63b9800a5c9fe8805bf89f76c7f0b98'
+                authorAvater: 'https://picsum.photos/200/300?random=1',
+                src: 'https://picsum.photos/200/300?random=1',
+                author: '小虾',
+                title: '趣味拼',
+                text: '拼出你的世界',
+                like: 30,
+                itemIndex: 3
             },
             {
-                id: 2,
-                title: '商品标题2',
-                text: '描述2',
-                price: 39.99,
-                count: 1,
-                src: 'https://picsum.photos/200/300?random=2'
+                authorAvater: 'https://picsum.photos/200/300?random=2',
+                src: 'https://picsum.photos/200/300?random=2',
+                author: '小猫',
+                title: '猫咪乐园',
+                text: '和小猫一起玩耍',
+                like: 25,
+                itemIndex: 4
             },
+            {
+                authorAvater: 'https://picsum.photos/200/300?random=3',
+                src: 'https://picsum.photos/200/300?random=3',
+                author: '小狗',
+                title: '狗狗乐园',
+                text: '和小狗一起玩耍',
+                like: 20,
+                itemIndex: 5
+            },
+            {
+                authorAvater: 'https://picsum.photos/200/300?random=4',
+                src: 'https://picsum.photos/200/300?random=4',
+                author: '小鸟',
+                title: '飞翔天空',
+                text: '和小鸟一起飞翔',
+                like: 15,
+                itemIndex: 6
+            }
+
         ];
         return {
-            cartInfo
+            waterfull1Data
         };
+    },
+    data() {
+        return {
+            cartInfo: [
+                {
+                    id: 1,
+                    title: '商品标题1',
+                    text: '描述1',
+                    price: 10.99,
+                    count: 2,
+                    src: 'https://img.jsdesign2.com/assets/img/653c609174a2094d23b5807a.png#b63b9800a5c9fe8805bf89f76c7f0b98'
+                },
+                {
+                    id: 2,
+                    title: '商品标题2',
+                    text: '描述2',
+                    price: 39.99,
+                    count: 1,
+                    src: 'https://picsum.photos/200/300?random=2'
+                }
+            ]
+        };
+
+    },
+    computed: {
+        totalPrice() {
+            let total = 0;
+            for (let i = 0; i < this.cartInfo.length; i++) {
+                total += this.cartInfo[i].price * 100 * this.cartInfo[i].count;
+            }
+            total /= 100;
+            return total;
+        }
     }
 };
 </script>
