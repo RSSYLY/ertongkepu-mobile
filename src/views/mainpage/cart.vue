@@ -1,11 +1,6 @@
 <!--  购物车页面 -->
 <template>
     <header class="cart-header">
-        <!-- <ul>
-            <li v-for="product in products" :key="product.id">
-                <router-link :to="'/product/' + product.id">{{ product.name }}</router-link>
-            </li>
-        </ul> -->
         <a-row :gutter="16" justify="center" align="middle">
             <a-col :xs="6" :sm="4" :md="3">
                 <a-dropdown>
