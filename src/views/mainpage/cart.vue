@@ -310,7 +310,7 @@ export default {
                 title: '趣味拼',
                 text: '拼出你的世界',
                 like: 30,
-                itemIndex: 3
+                id: 3
             },
             {
                 authorAvater: 'https://picsum.photos/200/300?random=2',
@@ -319,7 +319,7 @@ export default {
                 title: '猫咪乐园',
                 text: '和小猫一起玩耍',
                 like: 25,
-                itemIndex: 4
+                id: 4
             },
             {
                 authorAvater: 'https://picsum.photos/200/300?random=3',
@@ -328,7 +328,7 @@ export default {
                 title: '狗狗乐园',
                 text: '和小狗一起玩耍',
                 like: 20,
-                itemIndex: 5
+                id: 5
             },
             {
                 authorAvater: 'https://picsum.photos/200/300?random=4',
@@ -337,7 +337,7 @@ export default {
                 title: '飞翔天空',
                 text: '和小鸟一起飞翔',
                 like: 15,
-                itemIndex: 6
+                id: 6
             }
 
         ];

@@ -53,7 +53,7 @@
         <!-- 循环渲染card1Data -->
         <div class="list-content-line" style="padding: 0% 0% 0% 6%; ">
             <FixCard1 v-for="item in card1Data" :key="item.id" :authorAvater="item.authorAvater" :src="item.src"
-                :author="item.author" :title="item.title" :text="item.text" :itemIndex="item.itemIndex" />
+                :author="item.author" :title="item.title" :text="item.text" :id="item.id" />
         </div>
         <div class="list-header" style="margin-top:26px;padding: 0% 6% 0% 6%; ">
             <span>更多游戏推荐</span>
@@ -93,7 +93,7 @@ export default {
                 title: "野外冒险",
                 text: "在野外的森林冒险",
                 like: 16,
-                itemIndex: 1
+                id: 1
             },
             {
                 authorAvater: avaUrl2,
@@ -102,7 +102,7 @@ export default {
                 title: "玩具工厂",
                 text: "亲手制作属于你的玩具",
                 like: 29,
-                itemIndex: 2
+                id: 2
             }];
         const waterfull1Data = [
             {
@@ -112,7 +112,7 @@ export default {
                 title: '趣味拼',
                 text: '拼出你的世界',
                 like: 30,
-                itemIndex: 3
+                id: 3
             },
             {
                 authorAvater: 'https://picsum.photos/200/300?random=2',
@@ -121,7 +121,7 @@ export default {
                 title: '猫咪乐园',
                 text: '和小猫一起玩耍',
                 like: 25,
-                itemIndex: 4
+                id: 4
             },
             {
                 authorAvater: 'https://picsum.photos/200/300?random=3',
@@ -130,7 +130,7 @@ export default {
                 title: '狗狗乐园',
                 text: '和小狗一起玩耍',
                 like: 20,
-                itemIndex: 5
+                id: 5
             },
             {
                 authorAvater: 'https://picsum.photos/200/300?random=4',
@@ -139,7 +139,7 @@ export default {
                 title: '飞翔天空',
                 text: '和小鸟一起飞翔',
                 like: 15,
-                itemIndex: 6
+                id: 6
             }
 
         ];
@@ -159,7 +159,7 @@ export default {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: #f7f8fa;
     z-index: 100;
 }
 

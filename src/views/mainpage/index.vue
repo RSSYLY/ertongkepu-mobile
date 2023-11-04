@@ -1,6 +1,6 @@
 <!-- 首页 -->
 <template>
-    <div style="padding: 6% 6%;">
+    <div style="padding: 6% 6%;height: 100vh;">
     <a-row :gutter="[16, 24]" style="">
         <a-col class="gutter-row" :span="24">
             <a-card :tab-list="tabListNoTitle" :active-tab-key="noTitleKey" :bodyStyle="{ height: '98px' }"

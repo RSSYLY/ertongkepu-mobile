@@ -10,13 +10,13 @@ export default {
         author: String,
         title: String,
         text: String,
-        itemIndex:Number
+        id:Number
     }
 };
 </script>
 <!-- 这是模板 -->
 <template>        
-    <div class="fixcard-1-div" @click="this.$router.push('/product/'+itemIndex);">
+    <div class="fixcard-1-div" @click="this.$router.push('/product/'+id);">
         <div class="fixcard-1" :style="{ backgroundImage: 'url(' + src + ')', backgroundSize: 'cover', backgroundPosition: 'center' }">
             <div class="fixcard-1-content">
                 <div class="fixcard-1-content-header">
@@ -29,7 +29,7 @@ export default {
                 <div class="fixcard-1-content-content">
                     <div class="fixcard-1-content-content-text">
                         <span>{{ title }}</span>
-                        <span>{{ text +itemIndex }}</span>
+                        <span>{{ text +id }}</span>
                     </div>
                     <div class="fixcard-1-content-content-action">
                         <a-space>

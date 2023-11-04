@@ -3,22 +3,14 @@
     <div>
 
         <main class="container">
-            <!-- Your main content here -->
             <RouterView />
         </main>
         <footer>
-            <!-- <nav>
-                <ul>
-                    <li><router-link to="/main/index">主页</router-link></li>
-                    <li><router-link to="/main/productlist">产品列表</router-link></li>
-                    <li><router-link to="/main/cart">购物车</router-link></li>
-                    <li><router-link to="/main/personal">个人中心</router-link></li>
-                </ul>
-            </nav> -->
             <a-tabs class="buttom-nav" v-model:activeKey="activeKey" size="large" :tabBarGutter="tabBarGutter" centered>
                 <a-tab-pane key="index" tab="首页"></a-tab-pane>
                 <a-tab-pane key="productlist" tab="分类"></a-tab-pane>
                 <a-tab-pane key="cart" tab="购物车"></a-tab-pane>
+                <a-tab-pane key="personal" tab="个人中心"></a-tab-pane>
             </a-tabs>
         </footer>
 
@@ -39,7 +31,7 @@ export default {
 
         });
         // 标签间隙
-        const tabBarGutter = ref(60)
+        const tabBarGutter = ref(40)
         return{
             activeKey,tabBarGutter
         }

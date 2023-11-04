@@ -6,13 +6,13 @@
         450: { rowPerView: 2 }
     }" backgroundColor="transparent">
         <template #item="{ item, url, index }">
-            <div class="card" @click="this.$router.push('/product/' + this.listInfo[index].itemIndex)">
-                <div class="sb-card-like">
+            <div class="card" @click="this.$router.push('/product/' + this.listInfo[index].id)">
+                <div class="sb-card-2-like">
                     <HeartOutlined />
                     <span>{{ this.listInfo[index].like }}</span>
                 </div>
                 
-                <p class="sb-card-text">
+                <p class="sb-card-2-text">
                     <span>{{ this.listInfo[index].title }}</span>
                     <span>{{ this.listInfo[index].text }}</span>
                 </p>
@@ -39,7 +39,7 @@ export default {
 };
 </script>
 <style>
-.sb-card-text {
+.sb-card-2-text {
     z-index:2;
     position: absolute;
     display: flex;
@@ -50,7 +50,7 @@ export default {
     margin-bottom: 0px;
 }
 
-.sb-card-text span:first-child {
+.sb-card-2-text span:first-child {
     font-size: 14px;
 font-weight: 500;
 letter-spacing: 0px;
@@ -59,7 +59,7 @@ color: rgba(255, 255, 255, 1);
 text-align: left;
 }
 
-.sb-card-text span:last-child {
+.sb-card-2-text span:last-child {
     font-size: 12px;
 font-weight: 400;
 letter-spacing: 0px;
@@ -69,7 +69,7 @@ text-align: left;
 opacity: 0.7;
 }
 
-.sb-card-like {
+.sb-card-2-like {
     top: 8px;
     right: 8px;
     border-radius: 999px;
