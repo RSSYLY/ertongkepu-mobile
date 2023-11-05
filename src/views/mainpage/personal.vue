@@ -17,7 +17,7 @@
             <div class="users-list-item-title">{{ item.name }}</div>
             <div class="users-list-item-describe">{{ item.describe }}</div>
             <a-button type="primary" size="regular" :style="{ borderRadius: '30px' }">
-                <span class="users-list-item-button">关注</span>
+                <span class="users-list-item-button" style="display: flex;">关注</span>
             </a-button>
         </div>
     </div>
@@ -148,6 +148,8 @@
     color: rgba(0, 0, 0, 1);
     text-align: left;
     vertical-align: top;
+    display: flex;
+    align-items: center;
 }
 
 .list-header {
