@@ -89,8 +89,8 @@ export default {
             {
                 authorAvater: avaUrl1,
                 src: imgUrl1,
-                author: "小明（商品详情页请点我）",
-                title: "野外冒险",
+                author: "商品详情页点我",
+                title: "测试页",
                 text: "在野外的森林冒险",
                 like: 16,
                 id: 1
