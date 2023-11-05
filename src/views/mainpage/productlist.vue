@@ -89,7 +89,7 @@ export default {
             {
                 authorAvater: avaUrl1,
                 src: imgUrl1,
-                author: "小明",
+                author: "小明（商品详情页请点我）",
                 title: "野外冒险",
                 text: "在野外的森林冒险",
                 like: 16,
@@ -116,7 +116,7 @@ export default {
             },
             {
                 authorAvater: 'https://picsum.photos/200/300?random=2',
-                src: 'https://picsum.photos/200/300?random=2',
+                src: 'https://picsum.photos/300/200?random=2',
                 author: '小猫',
                 title: '猫咪乐园',
                 text: '和小猫一起玩耍',
@@ -125,7 +125,7 @@ export default {
             },
             {
                 authorAvater: 'https://picsum.photos/200/300?random=3',
-                src: 'https://picsum.photos/200/300?random=3',
+                src: 'https://picsum.photos/200/200?random=3',
                 author: '小狗',
                 title: '狗狗乐园',
                 text: '和小狗一起玩耍',
