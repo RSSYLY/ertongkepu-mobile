@@ -299,38 +299,38 @@ export default {
     setup() {
         const waterfull1Data = [
             {
-                authorAvater: 'https://picsum.photos/200/300?random=1',
+                authorAvater: 'https://picsum.photos/20/20?random=1',
                 src: 'https://picsum.photos/200/300?random=1',
-                author: '小虾',
+                author: '该数据暂未录入',
                 title: '趣味拼',
                 text: '拼出你的世界',
                 like: 30,
                 id: 3
             },
             {
-                authorAvater: 'https://picsum.photos/200/300?random=2',
-                src: 'https://picsum.photos/200/300?random=2',
-                author: '小猫',
-                title: '猫咪乐园',
-                text: '和小猫一起玩耍',
+                authorAvater: 'https://picsum.photos/20/20?random=2',
+                src: 'https://picsum.photos/300/200?random=2',
+                author: '该数据咱未录入',
+                title: '数字迷宫',
+                text: '在数字中迷失自我',
                 like: 25,
                 id: 4
             },
             {
-                authorAvater: 'https://picsum.photos/200/300?random=3',
-                src: 'https://picsum.photos/200/300?random=3',
-                author: '小狗',
-                title: '狗狗乐园',
-                text: '和小狗一起玩耍',
+                authorAvater: 'https://picsum.photos/20/20?random=3',
+                src: 'https://picsum.photos/200/200?random=3',
+                author: '该数据暂未录入',
+                title: '动物翻牌',
+                text: '翻开动物的秘密',
                 like: 20,
                 id: 5
             },
             {
-                authorAvater: 'https://picsum.photos/200/300?random=4',
+                authorAvater: 'https://picsum.photos/20/20?random=4',
                 src: 'https://picsum.photos/200/300?random=4',
-                author: '小鸟',
-                title: '飞翔天空',
-                text: '和小鸟一起飞翔',
+                author: '该数据暂未录入',
+                title: '画画大师',
+                text: '画出你的世界',
                 like: 15,
                 id: 6
             }
@@ -345,19 +345,27 @@ export default {
             cartInfo: [
                 {
                     id: 1,
-                    title: '商品标题1',
-                    text: '描述1',
-                    price: 10.99,
+                    title: '益智积木',
+                    text: '让孩子动手拼搭，锻炼思维能力',
+                    price: 21.39,
                     count: 2,
                     src: 'https://img.jsdesign2.com/assets/img/653c609174a2094d23b5807a.png#b63b9800a5c9fe8805bf89f76c7f0b98'
                 },
                 {
                     id: 2,
-                    title: '商品标题2',
-                    text: '描述2',
-                    price: 39.99,
+                    title: '娃娃玩具',
+                    text: '陪伴孩子快乐成长',
+                    price: 660.99,
                     count: 1,
-                    src: 'https://picsum.photos/200/300?random=2'
+                    src: 'https://picsum.photos/100/100?random=2'
+                },
+                {
+                    id: 3,
+                    title: '绘本故事',
+                    text: '开启孩子的阅读之旅',
+                    price: 407.79,
+                    count: 1,
+                    src: 'https://picsum.photos/100/100?random=3'
                 }
             ]
         };

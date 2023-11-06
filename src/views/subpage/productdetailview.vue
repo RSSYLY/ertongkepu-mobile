@@ -102,53 +102,96 @@ export default {
             // 根据 productId 获取商品详细信息，这里可以使用你的数据源或 API 调用
             const productList = [{
                 imageSrcs: ['https://picsum.photos/800/300?random=1', 'https://picsum.photos/400/300?random=2', 'https://picsum.photos/600/300?random=3'],
-                title: '趣味拼',
-                text: '拼出你的世界',
+                title: '趣味乐园',
+                text: '豪华型 | 2020年开业 | 人均消费￥100',
                 like: 22,
                 id: 1,
                 targets: ['儿童游戏', '益智', '创意', '乐趣满满'],
                 comment: {
-                    mostUseful: '这个游戏很好玩',
+                    mostUseful: '环境好，服务态度好',
                     commentList: [
                         {
-                            user: '小明',
-                            userAvater: 'https://picsum.photos/200/300?random=1',
-                            comment: '这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩这个游戏很好玩',
-                            time: 1698908810,
+                            user: '唐霞',
+                            userAvater: 'https://picsum.photos/20/20?random=1',
+                            comment: '这个游戏真好玩，我已经玩了好几遍了',
+                            time: 1699046059,
                             isUseing: true,
                             subComment: [
                                 {
-                                    user: '小华',
-                                    userAvater: 'https://picsum.photos/200/300?random=3',
-                                    comment: '你说得对你说得对你说得对你说得对你说得对你说得对',
-                                    time: 1698908810,
+                                    user: '齐焰',
+                                    userAvater: 'https://picsum.photos/20/20?random=3',
+                                    comment: '我也是，我也是',
+                                    time: 1699046059,
                                 },
                                 {
                                     user: '小光',
-                                    userAvater: 'https://picsum.photos/200/300?random=9',
-                                    comment: '对',
-                                    time: 1698908810,
+                                    userAvater: 'https://picsum.photos/20/20?random=9',
+                                    comment: '对，对，对',
+                                    time: 1699046059,
                                 },
                             ]
                         },
                         {
-                            user: '小红',
-                            userAvater: 'https://picsum.photos/200/300?random=2',
-                            comment: '这个游戏很好玩',
-                            time: 1698908810,
+                            user: '任力',
+                            userAvater: 'https://picsum.photos/20/20?random=2',
+                            comment: '这个游戏很好玩，音效逼真，让人沉浸其中',
+                            time: 1699046059,
                             isUseing: false,
                             subComment: [
                                 {
-                                    user: '小绿',
-                                    userAvater: 'https://picsum.photos/200/300?random=4',
+                                    user: '朱芳',
+                                    userAvater: 'https://picsum.photos/20/20?random=4',
                                     comment: '你说得对',
-                                    time: 1698908810,
+                                    time: 1699046059,
                                 },
                                 {
                                     user: '小理',
-                                    userAvater: 'https://picsum.photos/200/300?random=8',
+                                    userAvater: 'https://picsum.photos/20/20?random=8',
                                     comment: '对',
-                                    time: 1698908810,
+                                    time: 1699046059,
+                                },
+                            ]
+                        },
+                        {
+                            user: '彭志霞',
+                            userAvater: 'https://picsum.photos/20/20?random=2',
+                            comment: '游戏玩法创新独特，给孩子带来了很多乐趣！',
+                            time: 1699046059,
+                            isUseing: false,
+                            subComment: [
+                                {
+                                    user: '朱芳',
+                                    userAvater: 'https://picsum.photos/20/20?random=4',
+                                    comment: '你说得对',
+                                    time: 1699046059,
+                                },
+                                {
+                                    user: '碧江',
+                                    userAvater: 'https://picsum.photos/20/20?random=8',
+                                    comment: '对',
+                                    time: 1699046059,
+                                },
+                            ]
+                        },
+
+                        {
+                            user: '鲁港',
+                            userAvater: 'https://picsum.photos/20/20?random=2',
+                            comment: '这款游戏非常适合孩子，能够培养他们的思维能力和创造力！',
+                            time: 1699046059,
+                            isUseing: false,
+                            subComment: [
+                                {
+                                    user: '于卅',
+                                    userAvater: 'https://picsum.photos/20/20?random=4',
+                                    comment: '你说得对',
+                                    time: 1699046059,
+                                },
+                                {
+                                    user: '珠嚄',
+                                    userAvater: 'https://picsum.photos/20/20?random=8',
+                                    comment: '对',
+                                    time: 1699046059,
                                 },
                             ]
                         },
@@ -176,38 +219,38 @@ export default {
     setup() {
         const waterfull1Data = [
             {
-                authorAvater: 'https://picsum.photos/200/300?random=1',
+                authorAvater: 'https://picsum.photos/20/20?random=1',
                 src: 'https://picsum.photos/200/300?random=1',
-                author: '小虾',
+                author: '该数据暂未录入',
                 title: '趣味拼',
                 text: '拼出你的世界',
                 like: 30,
                 id: 3
             },
             {
-                authorAvater: 'https://picsum.photos/200/300?random=2',
-                src: 'https://picsum.photos/200/300?random=2',
-                author: '小猫',
-                title: '猫咪乐园',
-                text: '和小猫一起玩耍',
+                authorAvater: 'https://picsum.photos/20/20?random=2',
+                src: 'https://picsum.photos/300/200?random=2',
+                author: '该数据咱未录入',
+                title: '数字迷宫',
+                text: '在数字中迷失自我',
                 like: 25,
                 id: 4
             },
             {
-                authorAvater: 'https://picsum.photos/200/300?random=3',
-                src: 'https://picsum.photos/200/300?random=3',
-                author: '小狗',
-                title: '狗狗乐园',
-                text: '和小狗一起玩耍',
+                authorAvater: 'https://picsum.photos/20/20?random=3',
+                src: 'https://picsum.photos/200/200?random=3',
+                author: '该数据暂未录入',
+                title: '动物翻牌',
+                text: '翻开动物的秘密',
                 like: 20,
                 id: 5
             },
             {
-                authorAvater: 'https://picsum.photos/200/300?random=4',
+                authorAvater: 'https://picsum.photos/20/20?random=4',
                 src: 'https://picsum.photos/200/300?random=4',
-                author: '小鸟',
-                title: '飞翔天空',
-                text: '和小鸟一起飞翔',
+                author: '该数据暂未录入',
+                title: '画画大师',
+                text: '画出你的世界',
                 like: 15,
                 id: 6
             }
@@ -374,13 +417,14 @@ export default {
     font-size: 14px;
     color: #999;
 }
-.product-info{
+
+.product-info {
     margin-top: 26px;
     padding: 0% 6% 0% 6%;
     display: flex;
     flex-direction: column;
 }
-.product-info img{
+
+.product-info img {
     width: 100%;
-}
-</style>
+}</style>
