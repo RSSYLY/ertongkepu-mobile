@@ -154,20 +154,20 @@ export default {
                         },
                         {
                             user: '彭志霞',
-                            userAvater: 'https://picsum.photos/20/20?random=2',
+                            userAvater: 'https://picsum.photos/20/20?random=12',
                             comment: '游戏玩法创新独特，给孩子带来了很多乐趣！',
                             time: 1699046059,
                             isUseing: false,
                             subComment: [
                                 {
                                     user: '朱芳',
-                                    userAvater: 'https://picsum.photos/20/20?random=4',
+                                    userAvater: 'https://picsum.photos/20/20?random=14',
                                     comment: '你说得对',
                                     time: 1699046059,
                                 },
                                 {
                                     user: '碧江',
-                                    userAvater: 'https://picsum.photos/20/20?random=8',
+                                    userAvater: 'https://picsum.photos/20/20?random=18',
                                     comment: '对',
                                     time: 1699046059,
                                 },
@@ -176,20 +176,20 @@ export default {
 
                         {
                             user: '鲁港',
-                            userAvater: 'https://picsum.photos/20/20?random=2',
+                            userAvater: 'https://picsum.photos/20/20?random=22',
                             comment: '这款游戏非常适合孩子，能够培养他们的思维能力和创造力！',
                             time: 1699046059,
                             isUseing: false,
                             subComment: [
                                 {
                                     user: '于卅',
-                                    userAvater: 'https://picsum.photos/20/20?random=4',
+                                    userAvater: 'https://picsum.photos/20/20?random=24',
                                     comment: '你说得对',
                                     time: 1699046059,
                                 },
                                 {
                                     user: '珠嚄',
-                                    userAvater: 'https://picsum.photos/20/20?random=8',
+                                    userAvater: 'https://picsum.photos/20/20?random=28',
                                     comment: '对',
                                     time: 1699046059,
                                 },
